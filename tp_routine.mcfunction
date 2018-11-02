@@ -11,7 +11,7 @@ execute as @p at @a[distance=..3,team=!admin] if score @p[distance=..3] xp match
 execute as @p at @a[distance=..3,team=admin] if block ~ ~-1 ~ minecraft:diamond_block run function dvs:tp_success
 
 # if player has 1 or more xp, and steps on diamond block, do teleport
-execute as @p at @a[distance=..3] if score @p[distance=..3] xp matches 1.. if block ~ ~-1 ~ minecraft:diamond_block run function dvs:tp_success
+execute as @p at @a[distance=..3] if score @p[distance=..3,team=!admin] xp matches 1.. if block ~ ~-1 ~ minecraft:diamond_block run function dvs:tp_success
 
 # check cooldown
 execute if entity @e[type=minecraft:armor_stand,tag=tp,distance=..2,nbt={PortalCooldown:0}] run function dvs:tp_deactivate

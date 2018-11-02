@@ -1,3 +1,5 @@
+function dvs:tp_deactivate
+
 # travel east
 execute if block ~1 ~-2 ~-3 minecraft:barrier run setblock ^1 ^-2 ^ minecraft:repeating_command_block[facing=north]{Command: "function dvs:tp_routine", auto: 1b} replace
 

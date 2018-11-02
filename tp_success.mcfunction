@@ -1,17 +1,9 @@
-# do tp (TODO: decide where to tp)
-execute as @s at @e[tag=tp,type=minecraft:armor_stand,sort=nearest,limit=1,distance=5..] facing 1 0 0 run tp @s ~0.5 ~ ~
+# east, right hand teleport
+execute if entity @s[y_rotation=-135..-45] if block ~ ~-1 ~1.5 minecraft:repeating_command_block if entity @e[tag=tp,type=minecraft:armor_stand,sort=nearest,limit=1,distance=5..1000,dx=1000,dz=500,y_rotation=90] run function dvs:tp_tp_e
+# east, left hand teleport
+execute if entity @s[y_rotation=-135..-45] if block ~ ~-1 ~1.5 minecraft:repeating_command_block if entity @e[tag=tp,type=minecraft:armor_stand,sort=nearest,limit=1,distance=5..1000,dx=1000,dz=-500,y_rotation=90] run function dvs:tp_tp_e
 
-# some sfx
-playsound minecraft:entity.enderman.teleport hostile @s
-
-# some ux
-effect give @s minecraft:nausea 6 1 true
-
-# take pay if not admin
-experience add @s[team=!admin] -1 levels
-
-function dvs:tp_deactivate
-
-# tell success
-execute if entity @s[team=!admin] run tellraw @s {"text":"Teleported, took 1 levels","color":"green"}
-execute if entity @s[team=admin] run tellraw @s {"text":"Teleported","color":"green"}
+# west, left hand teleport
+execute if entity @s[y_rotation=45..135] if block ~ ~-1 ~-1.5 minecraft:repeating_command_block if entity @e[tag=tp,type=minecraft:armor_stand,sort=nearest,limit=1,distance=5..1000,dx=-1000,dz=500,y_rotation=90] run function dvs:tp_tp_w
+# west, right hand teleport
+execute if entity @s[y_rotation=45..135] if block ~ ~-1 ~-1.5 minecraft:repeating_command_block if entity @e[tag=tp,type=minecraft:armor_stand,sort=nearest,limit=1,distance=5..1000,dx=-1000,dz=-500,y_rotation=90] run function dvs:tp_tp_w

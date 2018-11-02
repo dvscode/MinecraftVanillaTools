@@ -18,4 +18,7 @@ execute align x align z run summon minecraft:armor_stand ~0.5 ~ ~ {Tags:["tp"],R
 execute align x align z run setblock ~ ~-0.5 ~-1.5 minecraft:barrier
 execute align x align z run setblock ~ ~-0.5 ~1.5 minecraft:barrier
 
+# make sure chunk doesn't unload
+execute align x align z run forceload add ~0.5 ~
+
 tellraw @s {"text":"Teleport created","color":"green"}

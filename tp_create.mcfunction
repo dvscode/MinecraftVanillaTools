@@ -1,4 +1,4 @@
-# Portal      EW      SN
+# Portal Config
 # . X X .   . 9 8 .
 # X . . X   7 . . 6
 # X . . X   5 . . 4
@@ -19,3 +19,6 @@
 
 # east-west portal
 execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block if block ~ ~-0.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-1.5 minecraft:diamond_block if block ~ ~0.5 ~1.5 minecraft:diamond_block if block ~ ~1.5 ~-1.5 minecraft:diamond_block if block ~ ~1.5 ~1.5 minecraft:diamond_block if block ~ ~2.5 ~-1.5 minecraft:diamond_block if block ~ ~2.5 ~1.5 minecraft:diamond_block if block ~ ~3.5 ~-0.5 minecraft:diamond_block if block ~ ~3.5 ~0.5 minecraft:diamond_block run function dvs:tp_create_e
+
+# validate if error
+execute align x align z unless block ~ ~-0.5 ~-1.5 minecraft:barrier unless block ~ ~-0.5 ~1.5 minecraft:barrier run tellraw @s {"text":"Can't create portal: align west for WE, south for SN","color":"red"}

@@ -6,8 +6,7 @@ execute at @e[type=minecraft:armor_stand,distance=..1,tag=tp,limit=1] run fill ^
 
 # make chunk loadable again
 # in 1.13.2 we can't do it, let's tell player to do it manually
-tellraw @s {"text":"To force unload the chunk run manually: /execute align x align z run forceload remove ~-2 ~-2 ~2 ~2","color":"yellow"}
-#execute align x align z if entity @e[type=minecraft:armor_stand,distance=..1,tag=tp,limit=1] run forceload remove execute align x align z run forceload remove ~-2 ~-2 ~2 ~2
+tellraw @s {"text":"Click to release portal chunk","color":"blue","clickEvent":{"action":"run_command","value":"/execute align x align z run forceload remove ~ ~"}}
 
 # messages
 execute unless entity @e[type=minecraft:armor_stand,distance=..1,tag=tp,limit=1] run tellraw @s {"text":"Teleport not found","color":"red"}

@@ -22,7 +22,4 @@ execute align x align z run setblock ~ ~-0.5 ~1.5 minecraft:barrier
 # in 1.13.2 we can't do it, let's tell player to do it manually
 tellraw @s {"text":"Click to force load portal chunk","color":"blue","clickEvent":{"action":"run_command","value":"/execute at @e[type=minecraft:armor_stand,distance=..1,tag=tp,limit=1] run forceload add ~ ~"}}
 
-#execute align x align z run forceload add ~-2 ~-2 ~2 ~2
-tellraw @s {"text":"To force load the chunk run manually: /execute align x align z run forceload add ~-2 ~-2 ~2 ~2","color":"yellow"}
-
 tellraw @s {"text":"Teleport created","color":"green"}

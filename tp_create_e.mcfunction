@@ -19,6 +19,8 @@ execute align x align z run setblock ~ ~-0.5 ~-1.5 minecraft:barrier
 execute align x align z run setblock ~ ~-0.5 ~1.5 minecraft:barrier
 
 # make sure chunk doesn't unload
-execute align x align z run forceload add ~0.5 ~
+# in 1.13.2 we can't do it, let's tell player to do it manually
+#execute align x align z run forceload add ~-2 ~-2 ~2 ~2
+tellraw @s {"text":"To force load the chunk run manually: /execute align x align z run forceload add ~-2 ~-2 ~2 ~2","color":"yellow"}
 
 tellraw @s {"text":"Teleport created","color":"green"}

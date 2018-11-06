@@ -1,5 +1,7 @@
 # some sfx
 playsound minecraft:entity.enderman.teleport hostile @s
+# fx
+execute at @s run particle portal ~ ~ ~ 0 1 0 .5 200 normal
 
 # some ux
 effect give @s minecraft:nausea 6 1 true

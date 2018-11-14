@@ -1,3 +1,5 @@
+tellraw @s {"text":"Correct WE portal configuration","color":"green"}
+
 # add west sign
 execute align x align z run setblock ~-0.5 ~1.5 ~1.5 minecraft:wall_sign[facing=west] replace
 

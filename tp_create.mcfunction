@@ -1,33 +1,11 @@
-# Portal Config
-# Layout    Diamond    Air
-# . X X .   . 9 8 .  . . . .
-# X . . X   7 . . 6  . 5 4 .
-# X . . X   5 . . 4  . 3 2 .
-# X . . X   3 . . 2  . 1 0 .
-# . X X .   . 1 0 .  . . . .
+# check if there are portals in 5 blocks
+execute positioned ~-5 ~-5 ~-5 if entity @e[tag=tp,type=minecraft:armor_stand,dx=10,dy=10,dz=10] run tellraw @s {"text":"Another portal is in 5 blocks", "color":"yellow"}
 
-# test each block individually
-# diamonds
-#execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block run say d0
-#execute align x align z if block ~ ~-0.5 ~0.5 minecraft:diamond_block run say d1
-#execute align x align z if block ~ ~0.5 ~-1.5 minecraft:diamond_block run say d2
-#execute align x align z if block ~ ~0.5 ~1.5 minecraft:diamond_block run say d3
-#execute align x align z if block ~ ~1.5 ~-1.5 minecraft:diamond_block run say d4
-#execute align x align z if block ~ ~1.5 ~1.5 minecraft:diamond_block run say d5
-#execute align x align z if block ~ ~2.5 ~-1.5 minecraft:diamond_block run say d6
-#execute align x align z if block ~ ~2.5 ~1.5 minecraft:diamond_block run say d7
-#execute align x align z if block ~ ~3.5 ~-0.5 minecraft:diamond_block run say d8
-#execute align x align z if block ~ ~3.5 ~0.5 minecraft:diamond_block run say d9
-# air
-#execute align x align z if block ~ ~0.5 ~-0.5 minecraft:air run say a0
-#execute align x align z if block ~ ~0.5 ~0.5 minecraft:air run say a1
-#execute align x align z if block ~ ~1.5 ~-0.5 minecraft:air run say a2
-#execute align x align z if block ~ ~1.5 ~0.5 minecraft:air run say a3
-#execute align x align z if block ~ ~2.5 ~-0.5 minecraft:air run say a4
-#execute align x align z if block ~ ~2.5 ~0.5 minecraft:air run say a5
+# try to create we
+execute positioned ~-5 ~-5 ~-5 unless entity @e[tag=tp,type=minecraft:armor_stand,dx=10,dy=10,dz=10] positioned as @s align x align z run function dvs:tp_validate_e
 
-# east-west portal
-execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block if block ~ ~-0.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-1.5 minecraft:diamond_block if block ~ ~0.5 ~1.5 minecraft:diamond_block if block ~ ~1.5 ~-1.5 minecraft:diamond_block if block ~ ~1.5 ~1.5 minecraft:diamond_block if block ~ ~2.5 ~-1.5 minecraft:diamond_block if block ~ ~2.5 ~1.5 minecraft:diamond_block if block ~ ~3.5 ~-0.5 minecraft:diamond_block if block ~ ~3.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-0.5 minecraft:air if block ~ ~0.5 ~0.5 minecraft:air if block ~ ~1.5 ~-0.5 minecraft:air if block ~ ~1.5 ~0.5 minecraft:air if block ~ ~2.5 ~-0.5 minecraft:air if block ~ ~2.5 ~0.5 minecraft:air run function dvs:tp_create_e
+# try to create ns
+execute positioned ~-5 ~-5 ~-5 unless entity @e[tag=tp,type=minecraft:armor_stand,dx=10,dy=10,dz=10] positioned as @s align x align z run function dvs:tp_validate_s
 
 # validate if error
 execute align x align z unless block ~ ~-0.5 ~-1.5 minecraft:barrier unless block ~ ~-0.5 ~1.5 minecraft:barrier run tellraw @s {"text":"Can't create portal: align west for WE, south for SN","color":"red"}

@@ -26,8 +26,5 @@
 #execute align x align z if block ~ ~2.5 ~-0.5 minecraft:air run say a4
 #execute align x align z if block ~ ~2.5 ~0.5 minecraft:air run say a5
 
-# check configuration
-execute align x align z unless block ~ ~-0.5 ~-0.5 minecraft:diamond_block unless block ~ ~-0.5 ~0.5 minecraft:diamond_block unless block ~ ~0.5 ~-1.5 minecraft:diamond_block unless block ~ ~0.5 ~1.5 minecraft:diamond_block unless block ~ ~1.5 ~-1.5 minecraft:diamond_block unless block ~ ~1.5 ~1.5 minecraft:diamond_block unless block ~ ~2.5 ~-1.5 minecraft:diamond_block unless block ~ ~2.5 ~1.5 minecraft:diamond_block unless block ~ ~3.5 ~-0.5 minecraft:diamond_block unless block ~ ~3.5 ~0.5 minecraft:diamond_block run tellraw @s {"text":"Wrong WE portal configuration", "color":"yellow"}
-
 # create east-west portal
 execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block if block ~ ~-0.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-1.5 minecraft:diamond_block if block ~ ~0.5 ~1.5 minecraft:diamond_block if block ~ ~1.5 ~-1.5 minecraft:diamond_block if block ~ ~1.5 ~1.5 minecraft:diamond_block if block ~ ~2.5 ~-1.5 minecraft:diamond_block if block ~ ~2.5 ~1.5 minecraft:diamond_block if block ~ ~3.5 ~-0.5 minecraft:diamond_block if block ~ ~3.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-0.5 minecraft:air if block ~ ~0.5 ~0.5 minecraft:air if block ~ ~1.5 ~-0.5 minecraft:air if block ~ ~1.5 ~0.5 minecraft:air if block ~ ~2.5 ~-0.5 minecraft:air if block ~ ~2.5 ~0.5 minecraft:air run function dvs:tp_create_e

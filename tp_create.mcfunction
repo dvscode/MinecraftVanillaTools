@@ -1,24 +1,33 @@
 # Portal Config
-# . X X .   . 9 8 .
-# X . . X   7 . . 6
-# X . . X   5 . . 4
-# X . . X   3 . . 2
-# . X X .   . 1 0 .
+# Layout    Diamond    Air
+# . X X .   . 9 8 .  . . . .
+# X . . X   7 . . 6  . 5 4 .
+# X . . X   5 . . 4  . 3 2 .
+# X . . X   3 . . 2  . 1 0 .
+# . X X .   . 1 0 .  . . . .
 
 # test each block individually
-#execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block run say 0
-#execute align x align z if block ~ ~-0.5 ~0.5 minecraft:diamond_block run say 1
-#execute align x align z if block ~ ~0.5 ~-1.5 minecraft:diamond_block run say 2
-#execute align x align z if block ~ ~0.5 ~1.5 minecraft:diamond_block run say 3
-#execute align x align z if block ~ ~1.5 ~-1.5 minecraft:diamond_block run say 4
-#execute align x align z if block ~ ~1.5 ~1.5 minecraft:diamond_block run say 5
-#execute align x align z if block ~ ~2.5 ~-1.5 minecraft:diamond_block run say 6
-#execute align x align z if block ~ ~2.5 ~1.5 minecraft:diamond_block run say 7
-#execute align x align z if block ~ ~3.5 ~-0.5 minecraft:diamond_block run say 8
-#execute align x align z if block ~ ~3.5 ~0.5 minecraft:diamond_block run say 9
+# diamonds
+#execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block run say d0
+#execute align x align z if block ~ ~-0.5 ~0.5 minecraft:diamond_block run say d1
+#execute align x align z if block ~ ~0.5 ~-1.5 minecraft:diamond_block run say d2
+#execute align x align z if block ~ ~0.5 ~1.5 minecraft:diamond_block run say d3
+#execute align x align z if block ~ ~1.5 ~-1.5 minecraft:diamond_block run say d4
+#execute align x align z if block ~ ~1.5 ~1.5 minecraft:diamond_block run say d5
+#execute align x align z if block ~ ~2.5 ~-1.5 minecraft:diamond_block run say d6
+#execute align x align z if block ~ ~2.5 ~1.5 minecraft:diamond_block run say d7
+#execute align x align z if block ~ ~3.5 ~-0.5 minecraft:diamond_block run say d8
+#execute align x align z if block ~ ~3.5 ~0.5 minecraft:diamond_block run say d9
+# air
+#execute align x align z if block ~ ~0.5 ~-0.5 minecraft:air run say a0
+#execute align x align z if block ~ ~0.5 ~0.5 minecraft:air run say a1
+#execute align x align z if block ~ ~1.5 ~-0.5 minecraft:air run say a2
+#execute align x align z if block ~ ~1.5 ~0.5 minecraft:air run say a3
+#execute align x align z if block ~ ~2.5 ~-0.5 minecraft:air run say a4
+#execute align x align z if block ~ ~2.5 ~0.5 minecraft:air run say a5
 
 # east-west portal
-execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block if block ~ ~-0.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-1.5 minecraft:diamond_block if block ~ ~0.5 ~1.5 minecraft:diamond_block if block ~ ~1.5 ~-1.5 minecraft:diamond_block if block ~ ~1.5 ~1.5 minecraft:diamond_block if block ~ ~2.5 ~-1.5 minecraft:diamond_block if block ~ ~2.5 ~1.5 minecraft:diamond_block if block ~ ~3.5 ~-0.5 minecraft:diamond_block if block ~ ~3.5 ~0.5 minecraft:diamond_block run function dvs:tp_create_e
+execute align x align z if block ~ ~-0.5 ~-0.5 minecraft:diamond_block if block ~ ~-0.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-1.5 minecraft:diamond_block if block ~ ~0.5 ~1.5 minecraft:diamond_block if block ~ ~1.5 ~-1.5 minecraft:diamond_block if block ~ ~1.5 ~1.5 minecraft:diamond_block if block ~ ~2.5 ~-1.5 minecraft:diamond_block if block ~ ~2.5 ~1.5 minecraft:diamond_block if block ~ ~3.5 ~-0.5 minecraft:diamond_block if block ~ ~3.5 ~0.5 minecraft:diamond_block if block ~ ~0.5 ~-0.5 minecraft:air if block ~ ~0.5 ~0.5 minecraft:air if block ~ ~1.5 ~-0.5 minecraft:air if block ~ ~1.5 ~0.5 minecraft:air if block ~ ~2.5 ~-0.5 minecraft:air if block ~ ~2.5 ~0.5 minecraft:air run function dvs:tp_create_e
 
 # validate if error
 execute align x align z unless block ~ ~-0.5 ~-1.5 minecraft:barrier unless block ~ ~-0.5 ~1.5 minecraft:barrier run tellraw @s {"text":"Can't create portal: align west for WE, south for SN","color":"red"}

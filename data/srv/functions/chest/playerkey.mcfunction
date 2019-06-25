@@ -1,0 +1,2 @@
+execute as @p[limit=1,sort=nearest,distance=1..3] run function srv:chest/givekey
+execute as @s run give @s minecraft:birch_sign{BlockEntityTag:{Text1:"{\"text\":\"Lock chest\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function srv:chest/lock\"}}",Text2:"{\"text\":\"Place in front\",\"color\":\"aqua\"}",Text3:"{\"text\":\"of a chest\",\"color\":\"aqua\"}",Text4:"{\"text\":\"Tap to lock\",\"color\":\"yellow\"}"},display:{Name:"{\"text\":\"Lock chest\"}"}}

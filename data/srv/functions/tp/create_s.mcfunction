@@ -1,13 +1,13 @@
 tellraw @s {"text":"Correct NS portal configuration","color":"green"}
 
 # add north sign
-execute align x align z run setblock ~-0.5 ~1.5 ~-0.5 minecraft:wall_sign[facing=north] replace
+execute align x align z run setblock ~-0.5 ~1.5 ~-0.5 minecraft:birch_wall_sign[facing=north] replace
 
 # add command on tap
 data merge block ~-0.5 ~1.5 ~-0.5 {Text1:"{\"text\":\"Public Teleport System\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function srv:tp/activate\"},\"color\":\"cyan\"}",Text2:"{\"text\":\"1 LVL\",\"color\":\"green\"}",Text3:"",Text4:"{\"text\":\"Tap to activate\",\"color\":\"blue\"}"}
 
 # add south sign
-execute align x align z run setblock ~2.5 ~1.5 ~1.5 minecraft:wall_sign[facing=south] replace
+execute align x align z run setblock ~2.5 ~1.5 ~1.5 minecraft:birch_wall_sign[facing=south] replace
 
 # add command on tap
 execute align x align z run data merge block ~2.5 ~1.5 ~1.5 {Text1:"{\"text\":\"Public Teleport System\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function srv:tp/activate\"},\"color\":\"cyan\"}",Text2:"{\"text\":\"1 LVL\",\"color\":\"green\"}",Text3:"",Text4:"{\"text\":\"Tap to activate\",\"color\":\"blue\"}"}

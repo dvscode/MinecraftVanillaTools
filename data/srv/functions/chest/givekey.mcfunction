@@ -1,6 +1,9 @@
 # make sure key is created
 function srv:chest/newkey
 
+# take base item
+clear @s minecraft:tripwire_hook 1
+
 # give key to player
 execute if score @s locks matches 0..0 run give @s minecraft:tripwire_hook{display:{Name:"\"ᚖᚇᚇᚊᚂᚂᚉᚁᚉᚂᚆ\"",Lore:["\"Private Key 0\""]},tag:"chest_key"}
 execute if score @s locks matches 1..1 run give @s minecraft:tripwire_hook{display:{Name:"\"ᚖᚇᚈᚃᚊᚇᚅᚉᚅᚊᚁ\"",Lore:["\"Private Key 1\""]},tag:"chest_key"}

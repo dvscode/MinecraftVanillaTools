@@ -1,0 +1,1 @@
+give @s minecraft:birch_sign{BlockEntityTag:{Text1:"{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function srv:chest/playerkey\"}}",Text2:"{\"text\":\"Tap to get\"}",Text3:"[\"\",{\"text\":\"Key\",\"color\":\"dark_purple\"},{\"text\":\" & \"},{\"text\":\"Lock\",\"color\":\"dark_red\"}]"},display:{Name:"{\"text\":\"Key & Chest Generator\"}"}}

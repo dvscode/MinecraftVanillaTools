@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generate Keys</title>
+    <script src="createkeys.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function strHash(str) {
+          var hash = Number(0), i, chr;
+          if (str.length === 0) return hash;
+          for (i = 0; i < str.length; i++) {
+            chr   = str.charCodeAt(i);
+            hash  = ((hash << 5) - hash) + chr;
+            hash |= 0; // Convert to 32bit integer
+          }
+          return hash;
+        };
+
+        function generateKeys() {
+          let seed = document.getElementById("seed");
+          let output = document.getElementById("output");
+
+          var seedNum = Number(seed.value);
+          if (isNaN(seedNum)) {
+            seedNum = strHash(seed.value);
+          }
+
+          console.log("server seed is " + seedNum);
+          output.innerHTML = generate(seedNum);
+        }
+    </script>
+  </head>
+  <body>
+    <p>
+      Server seed: <input id="seed" type="text" name="Server Seed" value="-8452744082060851497">
+    </p>
+    <p>
+      <button type="button" name="button" onclick="generateKeys()">Generate</button>
+    </p>
+    <span id="output"></span>
+  </body>
+</html>

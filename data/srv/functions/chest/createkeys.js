@@ -13,12 +13,11 @@ function generateGiveCommand(keyId, keyString)
 
 function generateLockCommand(keyId, keyString)
 {
-  return `execute if score @s locks matches ${keyId}..${keyId} if block ^ ^1 ^1 minecraft:chest run data modify block ^ ^1 ^1 "Lock" set value "${keyString}"`
+  return `execute if score @s locks matches ${keyId}..${keyId} if block ^ ^ ^ minecraft:chest run data modify block ^ ^ ^ "Lock" set value "${keyString}"`
 }
 
+function generate(serverSeed)
 {
-  let serverSeed = -8452744082060851497;
-
   // pseudo-random seed based random
   let m_w = 123456789;
   let m_z = 987654321;
@@ -51,5 +50,5 @@ function generateLockCommand(keyId, keyString)
     lockCommands += generateLockCommand(k, key) + "\n"
   }
   //return {symbols, totalKeys, keysToGenerate, keys, mcScript}
-  return html`Give Command:<pre>${giveCommands}</pre>Lock Command:<pre>${lockCommands}</pre>`
+  return `Give Command:<pre>${giveCommands}</pre>Lock Command:<pre>${lockCommands}</pre>`
 }
